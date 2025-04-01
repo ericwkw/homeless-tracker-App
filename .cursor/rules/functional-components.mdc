@@ -1,0 +1,21 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Functional Components in React/React Native
+
+## Description
+All React and React Native components must be written as functional components using hooks (e.g., `useState`, `useEffect`) instead of class-based components.
+
+## Applies to
+- `frontend/**/*.jsx`
+- `frontend/**/*.tsx`
+
+## Rule
+- Use functional components exclusively (e.g., `const ProfileCard = () => {...}`).
+- Avoid class-based components (e.g., `class ProfileCard extends React.Component`).
+- Leverage hooks for state and lifecycle management.
+
+## Reason
+Functional components are simpler, align with modern React best practices, and ensure consistency across the codebase.

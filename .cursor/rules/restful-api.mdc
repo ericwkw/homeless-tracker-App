@@ -1,0 +1,21 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# RESTful Conventions for Backend API Endpoints
+
+## Description
+Structure Express routes following RESTful principles for predictable and standardized API behavior.
+
+## Applies to
+- `backend/routes/*.js`
+
+## Rule
+- Use `GET /profiles` to list profiles.
+- Use `POST /checkins` to create a check-in.
+- Use `PUT /profiles/:id` to update a profile.
+- Avoid non-standard endpoint naming (e.g., `/getProfileData`).
+
+## Reason
+Ensures seamless integration with the frontend and maintains a clear, intuitive API structure.

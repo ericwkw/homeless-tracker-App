@@ -1,0 +1,22 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Mandate Modularity by Splitting Code
+
+## Description
+Split code into separate files based on functionality (e.g., components, utilities, services, API handlers) rather than consolidating everything into a single file.
+
+## Applies to
+- `frontend/**/*.jsx`
+- `frontend/**/*.tsx`
+- `backend/**/*.js`
+
+## Rule
+- Each React component must live in its own file (e.g., `ProfileCard.jsx`).
+- Backend routes should be separated into individual modules (e.g., `checkins.js`, `profiles.js`).
+- Utilities and services should be extracted into dedicated files (e.g., `api-utils.js`).
+
+## Reason
+Prevents unmanageable, monolithic files, improves readability, and supports team collaboration and version control.

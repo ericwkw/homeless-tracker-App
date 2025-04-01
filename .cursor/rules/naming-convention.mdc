@@ -1,0 +1,23 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Clear Naming Convention
+
+## Description
+Adopt a consistent naming convention for variables, functions, components, and files.
+
+## Applies to
+- `frontend/**/*.jsx`
+- `frontend/**/*.tsx`
+- `backend/**/*.js`
+
+## Rule
+- Variables/functions: camelCase (e.g., `fetchProfileData`).
+- React components: PascalCase (e.g., `ProfileCard`).
+- File names: kebab-case (e.g., `profile-card.jsx`).
+- Avoid vague names (e.g., `data`, `func`).
+
+## Reason
+Enhances code readability and maintainability across the project.

@@ -1,0 +1,22 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Consistent Error Handling
+
+## Description
+Implement centralized and consistent error handling across backend and frontend.
+
+## Applies to
+- `backend/**/*.js`
+- `frontend/**/*.jsx`
+- `frontend/**/*.tsx`
+
+## Rule
+- Backend: Use Express middleware for errors, returning JSON responses (e.g., `{ "error": "Invalid QR code", "status": 400 }`).
+- Frontend: Wrap API calls in try-catch blocks and display user-friendly messages (e.g., via toast notifications).
+- Avoid unhandled exceptions or generic error messages.
+
+## Reason
+Improves reliability and user experience by managing errors gracefully and uniformly.

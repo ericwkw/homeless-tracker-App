@@ -1,0 +1,21 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Optimize Map Rendering in Frontend
+
+## Description
+Use memoization to optimize map rendering and prevent unnecessary re-renders.
+
+## Applies to
+- `frontend/components/map/*.jsx`
+- `frontend/components/map/*.tsx`
+
+## Rule
+- Wrap map components with `React.memo` (e.g., `export default React.memo(MapView)`).
+- Use `useMemo` for marker data (e.g., `const markers = useMemo(() => computeMarkers(data), [data])`).
+- Avoid re-rendering map on unrelated state changes.
+
+## Reason
+Improves performance, especially with large numbers of tracked individuals.

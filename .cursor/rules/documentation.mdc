@@ -1,0 +1,22 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Document Key Functions and Components
+
+## Description
+Add JSDoc comments to major functions, API routes, and React components for clarity.
+
+## Applies to
+- `frontend/**/*.jsx`
+- `frontend/**/*.tsx`
+- `backend/**/*.js`
+
+## Rule
+- Use JSDoc format (e.g., `/** Fetches check-in data for a given area */`).
+- Document parameters and return values (e.g., `@param {string} areaId`).
+- Apply to all exported functions, components, and routes.
+
+## Reason
+Facilitates onboarding and maintenance by providing clear context for future developers.
