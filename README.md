@@ -25,33 +25,27 @@ The Homeless Tracker App is designed to assist in monitoring and managing homele
 
 ### Reporting
 - Summary Reports: Total individuals, breakdown by status, movement trends.
-- Individual Reports: Detailed view of selected individual's profile, location, and status history.
+- Individual Reports: Detailed view of a selected individual's profile, last known location, and status history.
 
 ## Tech Stack
 
-### Backend
-- **Node.js** with **Express.js**: For building the RESTful API.
-- **PostgreSQL**: Database for storing profiles, check-in logs, and community reports.
-- **bcrypt**: For password hashing.
-- **cors**: Cross-Origin Resource Sharing.
-- **dotenv**: For managing environment variables.
-- **helmet**: For securing Express apps by setting various HTTP headers.
-- **jsonwebtoken**: For implementing JWT-based authentication.
-- **nodemon**: For automatic server restarts during development.
+### Backend & Database
+- **Supabase**: Provides a managed PostgreSQL database, authentication, and real-time capabilities.
 
-### Frontend
-- **React**: JavaScript library for building user interfaces.
-- **@react-google-maps/api**: For map integration.
-- **axios**: Promise-based HTTP client for the browser and Node.js.
-- **jsqr**: For QR code scanning functionality.
-- **react-router-dom**: For declarative routing in React applications.
+### Web Frontend & API
+- **Next.js**: React framework for building the web application and API routes.
+- **Vercel**: Platform for seamless deployment of the Next.js application.
+
+### Mobile Frontend
+- **Expo**: Framework for building cross-platform mobile applications (iOS and Android) with React Native.
 
 ## Getting Started
 
 ### Prerequisites
 - Node.js (LTS version recommended)
 - npm (comes with Node.js)
-- PostgreSQL database
+- Git
+- A Supabase project (with your project URL and `anon` public key)
 
 ### Installation
 
@@ -61,42 +55,49 @@ git clone https://github.com/ericwkw/homeless-tracker-App.git
 cd homeless-tracker-App
 ```
 
-#### 2. Backend Setup
+#### 2. Web Application Setup (Next.js)
 ```bash
-cd backend
+cd web-app
 npm install
 ```
-Create a `.env` file in the `backend` directory with your PostgreSQL connection string and other environment variables (e.g., `DATABASE_URL`, `JWT_SECRET`, `PORT`).
+Create a `.env.local` file in the `web-app` directory with your Supabase credentials:
+```
+NEXT_PUBLIC_SUPABASE_URL=YOUR_SUPABASE_PROJECT_URL
+NEXT_PUBLIC_SUPABASE_ANON_KEY=YOUR_SUPABASE_ANON_KEY
+```
 
-#### 3. Frontend Setup
+#### 3. Mobile Application Setup (Expo)
 ```bash
-cd ../frontend
+cd ../mobile-app
 npm install
 ```
-Create a `.env` file in the `frontend` directory for any frontend-specific environment variables (e.g., `REACT_APP_GOOGLE_MAPS_API_KEY`, `REACT_APP_BACKEND_URL`).
+Create a `.env` file in the `mobile-app` directory with your Supabase credentials:
+```
+EXPO_PUBLIC_SUPABASE_URL=YOUR_SUPABASE_PROJECT_URL
+EXPO_PUBLIC_SUPABASE_ANON_KEY=YOUR_SUPABASE_ANON_KEY
+```
 
-### Running the Application
+### Running the Applications
 
-#### 1. Start the Backend Server
-From the `backend` directory:
+#### 1. Run the Web Application (Next.js)
+From the `web-app` directory:
 ```bash
 npm run dev
-# or npm start for production
 ```
-The backend server will typically run on `http://localhost:5000` (or your specified PORT).
+The web application will typically run on `http://localhost:3000`.
 
-#### 2. Start the Frontend Development Server
-From the `frontend` directory:
+#### 2. Run the Mobile Application (Expo)
+From the `mobile-app` directory:
 ```bash
 npm start
 ```
-The frontend application will open in your browser, usually at `http://localhost:3000`.
+This will start the Expo development server. You can then use the Expo Go app on your mobile device or an emulator to scan the QR code and open the app.
 
 ## Project Structure
 
-- `backend/`: Contains the Node.js/Express.js server, API routes, controllers, models, and database configuration.
-- `frontend/`: Contains the React application, including components, context, and utility functions.
-- `memory-bank/`: Contains project documentation, requirements, and architectural notes.
+- `web-app/`: Contains the Next.js web application, including API routes, components, and pages.
+- `mobile-app/`: Contains the Expo mobile application, including components and mobile-specific features.
+- `memory-bank/`: Contains project documentation, requirements, architectural notes, and SQL schema files.
 
 ## Contributing
 Contributions are welcome! Please feel free to submit a pull request or open an issue.
