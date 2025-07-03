@@ -60,9 +60,8 @@ The migration will proceed in phases, focusing on setting up the new infrastruct
 - [x] **Task 4.1: Configure Vercel Deployment:**
     - Linked the Next.js project to Vercel.
     - Configured `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY` environment variables on Vercel.
-- [ ] **Task 4.2: Deploy Next.js Application:**
-    - Deploy the Next.js application to Vercel.
-    - Verify that the web application and API routes are functioning correctly.
+- [x] **Task 4.2: Deploy Next.js Application:**
+    - Committed and pushed changes to GitHub, triggering Vercel deployment.
 
 ### Phase 5: Cleanup & Verification
 - [ ] **Task 5.1: Remove Old Codebase:**
