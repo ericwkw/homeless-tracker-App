@@ -1,73 +1,71 @@
-# Tech Stack for Homeless Tracker App  
-**Date:** April 01, 2025  
-**Version:** 1.0  
+# Tech Stack for Homeless Tracker App
+**Date:** July 03, 2025
+**Version:** 2.0
 
 ---
 
-## Overview  
-This tech stack is designed to meet the requirements of the Homeless Tracker App, focusing on simplicity, reliability, and compatibility with the hybrid QR code check-in and community reporting system.
+## Overview
+This tech stack is designed to meet the requirements of the Homeless Tracker App, focusing on rapid development, scalability, and cross-platform compatibility for both web and mobile.
 
 ---
 
-## Frontend  
-- **Technology:** React (Web) + React Native (Mobile)  
-- **Purpose:** Build an interactive, map-based interface for web and mobile platforms.  
-- **Rationale:**  
-  - Single codebase for web and mobile simplifies development.  
-  - Large ecosystem with libraries for maps (e.g., Google Maps integration).  
-  - Easy to create user-friendly dashboards and forms.  
+## Backend & Database
+- **Technology:** Supabase
+- **Purpose:** Provides a managed PostgreSQL database, authentication, real-time subscriptions, and storage.
+- **Rationale:**
+  - **Rapid Development:** Offers out-of-the-box solutions for common backend needs, significantly reducing development time.
+  - **Scalability:** Built on cloud infrastructure, ensuring the application can scale with user growth.
+  - **Real-time Capabilities:** Enables live updates for map data and reports.
+  - **Authentication:** Handles user authentication and management securely.
 
-## Backend  
-- **Technology:** Node.js with Express  
-- **Purpose:** Handle API requests for QR check-ins, community reports, and data retrieval.  
-- **Rationale:**  
-  - Lightweight and fast for real-time data processing.  
-  - JavaScript-based, aligning with frontend for consistency.  
-  - Robust package ecosystem (e.g., npm) for quick feature additions.  
+## Web Frontend & API
+- **Technology:** Next.js (React Framework)
+- **Purpose:** For building the responsive web application and handling server-side logic via API routes.
+- **Rationale:**
+  - **Unified Development:** Allows building both frontend and backend API routes within a single codebase.
+  - **Performance:** Supports Server-Side Rendering (SSR) and Static Site Generation (SSG) for improved performance and SEO.
+  - **Developer Experience:** Excellent tooling and a strong community.
 
-## Database  
-- **Technology:** PostgreSQL  
-- **Purpose:** Store individual profiles, check-in logs, and community reports securely.  
-- **Rationale:**  
-  - Reliable relational database with geospatial support (PostGIS).  
-  - Simple schema design for structured data.  
-  - ACID compliance ensures data integrity.  
+## Mobile Frontend
+- **Technology:** Expo (React Native Framework)
+- **Purpose:** For building cross-platform mobile applications (iOS and Android) from a single codebase.
+- **Rationale:**
+  - **Mobile Accessibility:** Crucial for features like QR code scanning and community reporting on mobile devices.
+  - **Single Codebase:** Significantly reduces development time and effort compared to separate native apps.
+  - **Simplified Tooling:** Abstracts away complex native build environments.
 
-## Mapping  
-- **Technology:** Google Maps API (or OpenStreetMap)  
-- **Purpose:** Provide map visualization with zoom, markers, and heatmaps.  
-- **Rationale:**  
-  - Easy integration with React via libraries.  
-  - Reliable and accurate mapping solution.  
-  - OpenStreetMap as a free alternative if budget is constrained.  
+## Deployment
+- **Technology:** Vercel
+- **Purpose:** For seamless, automatic deployment of the Next.js web application.
+- **Rationale:**
+  - **Zero-Config Deployment:** Integrates perfectly with Next.js for automatic deployments upon Git pushes.
+  - **Global CDN:** Ensures fast content delivery worldwide.
+  - **Serverless Functions:** Next.js API routes deploy as serverless functions, handling backend logic efficiently.
 
-## QR Code Generation & Scanning  
-- **Technology:** qrcode (Node.js library) + ZXing (scanning)  
-- **Purpose:** Generate unique QR codes and enable scanning at check-in points.  
-- **Rationale:**  
-  - Simple tools for creating and reading QR codes.  
-  - Integrates seamlessly with mobile app camera functionality.  
-  - Lightweight and dependable.  
+## Mapping
+- **Technology:** Google Maps API (via `@react-google-maps/api` for web, potentially similar for mobile)
+- **Purpose:** To display check-in and report locations on an interactive map.
+- **Rationale:**
+  - **Familiarity & Features:** Widely used, robust mapping solution with rich features for visualization.
+  - **Integration:** Good library support for React and React Native environments.
 
-## Hosting/Deployment  
-- **Technology:** Heroku (Backend) + Netlify (Frontend)  
-- **Purpose:** Host the backend API/database and frontend application.  
-- **Rationale:**  
-  - Heroku simplifies Node.js and PostgreSQL deployment.  
-  - Netlify offers easy hosting for React apps with automatic scaling.  
-  - Minimal DevOps required, ideal for small teams.  
-
-## Authentication/Security  
-- **Technology:** JWT (JSON Web Tokens)  
-- **Purpose:** Secure API endpoints and user access for reporters.  
-- **Rationale:**  
-  - Simple, stateless authentication system.  
-  - Easy to implement with Express.  
-  - Ensures data privacy and restricted access.  
+## QR Code Scanning
+- **Technology:** `jsqr` (for web) and `expo-barcode-scanner` (for mobile)
+- **Purpose:** To enable scanning of QR codes for check-ins.
+- **Rationale:**
+  - **Platform-Specific Optimization:** Uses appropriate libraries for web and mobile environments to ensure optimal performance and user experience.
 
 ---
 
-## Why This Stack?  
-- **Simplicity:** JavaScript across the stack reduces complexity; tools like Heroku and Netlify streamline deployment.  
-- **Reliability:** Mature, widely-used technologies with strong community support.  
-- **Alignment:** Fully supports the app’s needs for maps, data storage, QR functionality, and secure access.  
+## Why This Stack?
+- **Efficiency:** Supabase and Next.js/Expo accelerate development by providing managed services and integrated frameworks.
+- **Scalability:** Cloud-native services (Supabase, Vercel) ensure the application can handle growth.
+- **Cross-Platform:** Next.js for web and Expo for mobile allow reaching users on all major platforms with a consistent codebase.
+- **Modern & Maintainable:** Utilizes modern, well-supported technologies with strong communities.
+
+---
+
+## Future Considerations
+- **Advanced Analytics:** Integrate with a BI tool for deeper insights.
+- **Offline Sync:** Enhance robust offline data synchronization for mobile.
+- **Notifications:** Implement push notifications for relevant updates.
