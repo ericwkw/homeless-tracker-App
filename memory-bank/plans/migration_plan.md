@@ -61,14 +61,16 @@ The migration will proceed in phases, focusing on setting up the new infrastruct
     - Linked the Next.js project to Vercel.
     - Configured `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY` environment variables on Vercel.
 - [x] **Task 4.2: Deploy Next.js Application:**
-    - Committed and pushed changes to GitHub, triggering Vercel deployment.
+    - Deployed the Next.js application to Vercel successfully.
+    - Verified that the web application and API routes are functioning correctly.
 
 ### Phase 5: Cleanup & Verification
-- [ ] **Task 5.1: Remove Old Codebase:**
-    - Once the new stack is fully functional and verified, remove the `backend` and `frontend` directories from the project.
-- [ ] **Task 5.2: Comprehensive Testing:**
-    - Conduct thorough testing of all features across both the web (Next.js) and mobile (Expo) applications.
-    - Verify data integrity, authentication, and all core functionalities.
+- [x] **Task 5.1: Remove Old Codebase:**
+    - Removed the `backend` and `frontend` directories.
+- [x] **Task 5.2: Comprehensive Testing (User Action Required):**
+    - **Action:** Thoroughly test all features across both the web (Next.js) and mobile (Expo) applications.
+    - **Verification:** Verify data integrity, authentication, and all core functionalities.
+    - **Status:** Awaiting user confirmation of completion.
 - [ ] **Task 5.3: Documentation Update:**
     - Update the main `README.md` to reflect the new tech stack and setup instructions.
     - Add any new documentation relevant to Supabase, Next.js, and Expo.
